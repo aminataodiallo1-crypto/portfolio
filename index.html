@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Accueil – Aminata O. Diallo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Étudiante en 2e année de BTS SIO option SISR,spécialisée dans les systèmes, réseaux et la cybersécurité.">
+  <style>
+    /* mêmes variables et styles globaux que ton fichier actuel */
+    :root {
+      --primary: #2563eb;
+      --primary-light: #dbeafe;
+      --bg: #0f172a;
+      --card-bg: #020617;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #22c55e;
+      --border: #1f2937;
+      --radius: 12px;
+      --shadow: 0 18px 45px rgba(15,23,42,0.75);
+      --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{
+      font-family:var(--font-main);
+      background:radial-gradient(circle at top,#1e293b 0,#020617 55%);
+      color:var(--text);
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+    }
+    a{color:inherit;text-decoration:none;}
+    img{max-width:100%;display:block;}
+    .page{min-height:100vh;display:flex;flex-direction:column;}
+    header{
+      position:sticky;top:0;z-index:50;
+      backdrop-filter:blur(16px);
+      background:linear-gradient(to bottom,rgba(15,23,42,0.92),rgba(15,23,42,0.75),transparent);
+      border-bottom:1px solid rgba(31,41,55,0.7);
+    }
+    .nav{
+      max-width:1120px;margin:0 auto;
+      padding:0.8rem 1.25rem;
+      display:flex;align-items:center;justify-content:space-between;gap:1.5rem;
+    }
+    .nav-brand{display:flex;align-items:center;gap:0.75rem;}
+    .avatar{
+      width:42px;height:42px;border-radius:999px;
+      border:2px solid rgba(148,163,184,0.6);
+      background:radial-gradient(circle at 30% 0,#38bdf8,#1d4ed8 40%,#020617 100%);
+      display:flex;align-items:center;justify-content:center;
+      font-weight:700;font-size:1.1rem;color:#e5e7eb;
+      box-shadow:0 8px 20px rgba(15,23,42,0.9);
+    }
+    .brand-text{display:flex;flex-direction:column;gap:0.1rem;}
+    .brand-name{
+      font-weight:600;letter-spacing:0.08em;text-transform:uppercase;
+      font-size:0.8rem;color:#e5e7eb;
+    }
+    .brand-role{font-size:0.75rem;color:var(--muted);}
+    .nav-menu{display:flex;flex-wrap:wrap;gap:0.5rem;font-size:0.85rem;}
+    .nav-menu a{
+      padding:0.4rem 0.8rem;border-radius:999px;
+      color:var(--muted);border:1px solid transparent;transition:all 0.18s ease;
+    }
+    .nav-menu a:hover{
+      color:var(--text);border-color:rgba(55,65,81,0.85);background:rgba(15,23,42,0.9);
+    }
+    .nav-menu a.nav-primary{
+      background:linear-gradient(135deg,#2563eb,#22c55e);
+      color:#f9fafb;border:none;box-shadow:0 10px 25px rgba(37,99,235,0.55);
+    }
+    main{flex:1;}
+    .container{max-width:1120px;margin:0 auto;padding:1.75rem 1.25rem 3.5rem;}
+    .hero{
+      display:grid;
+      grid-template-columns:minmax(0,2.2fr) minmax(0,1.2fr) minmax(0,2.3fr);
+      gap:2rem;align-items:center;padding-top:1.25rem;padding-bottom:2.25rem;
+    }
+    .hero-main h1{
+      font-size:clamp(1.9rem,3vw,2.4rem);line-height:1.2;margin-bottom:0.8rem;
+    }
+    .hero-badge{
+      display:inline-flex;align-items:center;gap:0.45rem;
+      font-size:0.8rem;padding:0.25rem 0.8rem 0.25rem 0.25rem;
+      border-radius:999px;border:1px solid rgba(55,65,81,0.9);
+      background:rgba(15,23,42,0.88);margin-bottom:0.7rem;
+    }
+    .hero-badge-dot{
+      width:10px;height:10px;border-radius:999px;
+      background:radial-gradient(circle at 30% 0,#22c55e,#16a34a);
+      box-shadow:0 0 0 6px rgba(34,197,94,0.28);
+    }
+    .hero-subtitle{font-size:0.95rem;color:var(--muted);margin-bottom:1.25rem;}
+    .hero-meta{
+      display:flex;flex-wrap:wrap;gap:0.8rem;margin-bottom:1.8rem;
+      font-size:0.82rem;color:var(--muted);
+    }
+    .hero-meta span{
+      padding:0.25rem 0.7rem;border-radius:999px;
+      border:1px solid rgba(55,65,81,0.85);background:rgba(15,23,42,0.9);
+    }
+    .hero-actions{display:flex;flex-wrap:wrap;gap:0.75rem;}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:0.55rem 1.25rem;border-radius:999px;font-size:0.9rem;font-weight:500;
+      border:1px solid transparent;cursor:pointer;transition:all 0.18s ease;
+      background:transparent;color:inherit;
+    }
+    .btn-primary{
+      background:linear-gradient(135deg,#2563eb,#22c55e);
+      color:#f9fafb;box-shadow:0 16px 50px rgba(37,99,235,0.6);
+    }
+    .btn-primary:hover{
+      transform:translateY(-1px);box-shadow:0 20px 55px rgba(37,99,235,0.75);
+    }
+    .btn-ghost{
+      border-color:rgba(55,65,81,0.85);color:var(--muted);background:rgba(15,23,42,0.9);
+    }
+    .btn-ghost:hover{
+      color:var(--text);border-color:rgba(75,85,99,0.95);background:rgba(15,23,42,0.95);
+    }
+    /* Colonne centrale : photo */
+    .hero-photo-wrapper{
+      display:flex;align-items:center;justify-content:center;
+    }
+    .hero-photo-slot{
+      width:190px;height:190px;border-radius:32px;
+      border:2px dashed rgba(148,163,184,0.8);
+      display:flex;flex-direction:column;align-items:center;justify-content:center;
+      color:var(--muted);font-size:0.8rem;
+      background:radial-gradient(circle at 20% 0,rgba(56,189,248,0.15),rgba(15,23,42,0.98));
+      box-shadow:0 16px 40px rgba(15,23,42,0.85);
+      text-align:center;padding:0.75rem;
+    }
+	.hero-photo-real {
+	  border-style: solid;          /* enlève l'effet « cadre en pointillés » */
+	}
+
+	.hero-photo-img {
+	  width: 100%;
+	  height: 100%;
+	  border-radius: 28px;
+	  object-fit: cover;
+	}
+
+    .hero-photo-slot-icon{
+      width:62px;height:62px;border-radius:999px;
+      border:1px solid rgba(148,163,184,0.7);
+      display:flex;align-items:center;justify-content:center;
+      margin-bottom:0.5rem;
+      background:radial-gradient(circle at 10% 0,#38bdf8,#1d4ed8 40%,#020617 100%);
+      color:#e5e7eb;font-weight:600;font-size:1.4rem;
+    }
+    .hero-photo-slot small{font-size:0.75rem;margin-top:0.2rem;}
+    /* Carte résumé à droite : reprise de ton hero-card */
+    .hero-aside{position:relative;height:100%;}
+    .hero-card{
+      position:relative;border-radius:24px;
+      background:radial-gradient(circle at top,#1f2937 0,#020617 78%);
+      padding:1.5rem 1.35rem;box-shadow:var(--shadow);
+      border:1px solid rgba(31,41,55,0.9);overflow:hidden;isolation:isolate;
+    }
+    .hero-card::before{
+      content:"";position:absolute;inset:0;
+      background:radial-gradient(circle at 0 0,rgba(56,189,248,0.25),transparent 55%);
+      opacity:0.9;pointer-events:none;
+    }
+    .hero-card-header{
+      display:flex;align-items:center;justify-content:space-between;
+      gap:1.1rem;margin-bottom:1.2rem;position:relative;z-index:1;
+    }
+    .hero-card-profile{display:flex;align-items:center;gap:0.75rem;}
+    .hero-photo-mini{
+      width:60px;height:60px;border-radius:18px;
+      background:radial-gradient(circle at 10% 0,#38bdf8,#1d4ed8 35%,#020617 100%);
+      border:1px solid rgba(148,163,184,0.7);box-shadow:0 14px 32px rgba(15,23,42,0.85);
+    }
+    .hero-photo-mini-fallback{
+      width:100%;height:100%;display:flex;align-items:center;justify-content:center;
+      font-weight:600;font-size:1.4rem;color:#eff6ff;
+    }
+    .hero-card-text h2{font-size:1rem;margin-bottom:0.1rem;}
+    .hero-card-text p{font-size:0.8rem;color:var(--muted);}
+    .hero-card-pill{
+      font-size:0.75rem;padding:0.25rem 1rem;border-radius:999px;
+      border:1px solid rgba(55,65,81,0.9);color:var(--muted);background:rgba(15,23,42,0.92);
+    }
+    .hero-card-body{position:relative;z-index:1;}
+    .hero-card-body p{font-size:0.82rem;color:var(--muted);margin-bottom:1rem;}
+    .hero-card-tags{
+      display:flex;flex-wrap:wrap;gap:0.35rem;margin-bottom:0.85rem;
+    }
+    .hero-card-tags span{
+      font-size:0.74rem;padding:0.18rem 0.55rem;border-radius:999px;
+      background:rgba(15,23,42,0.9);border:1px solid rgba(55,65,81,0.85);color:#e5e7eb;
+    }
+    .hero-card-footer{
+      display:flex;align-items:center;justify-content:space-between;
+      gap:0.75rem;font-size:0.75rem;color:var(--muted);
+    }
+    .hero-card-kpi{display:flex;flex-direction:column;gap:0.2rem;}
+    .hero-card-kpi strong{font-size:0.9rem;color:#e5e7eb;}
+    .hero-card-status{
+      display:inline-flex;align-items:center;gap:0.4rem;
+      padding:0.2rem 0.6rem;border-radius:999px;
+      background:rgba(15,23,42,0.95);border:1px solid rgba(31,41,55,0.9);
+    }
+    .hero-card-status-dot{
+      width:8px;height:8px;border-radius:999px;
+      background:linear-gradient(135deg,#22c55e,#16a34a);
+      box-shadow:0 0 0 5px rgba(34,197,94,0.22);
+    }
+    footer{
+      border-top:1px solid rgba(31,41,55,0.9);
+      padding:1rem 1.25rem 2rem;font-size:0.78rem;color:var(--muted);text-align:center;
+    }
+    @media(max-width:900px){
+      .hero{grid-template-columns:minmax(0,1fr);}
+      .hero-photo-wrapper{order:-1;margin-bottom:1rem;}
+    }
+    @media(max-width:640px){
+      .nav{padding-inline:1rem;}
+      .nav-menu{justify-content:flex-end;}
+      .hero{padding-top:1rem;}
+      .container{padding-inline:1rem;}
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <nav class="nav">
+      <div class="nav-brand">
+        <div class="avatar">AD</div>
+        <div class="brand-text">
+          <div class="brand-name">Aminata O. Diallo</div>
+          <div class="brand-role">Étudiante en 2e année de BTS SIO option SISR.</div>
+        </div>
+      </div>
+      <div class="nav-menu">
+        <a href="index.html" class="nav-primary">Accueil</a>
+        <a href="apropos.html">À propos</a>
+        <a href="competences.html">Compétences</a>
+        <a href="experiences.html">Expériences</a>
+        <a href="formations.html">Formations</a>
+        <a href="projets.html">Projets</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="hero">
+        <!-- Colonne texte -->
+        <div class="hero-main">
+          <div class="hero-badge">
+            <div class="hero-badge-dot"></div>
+            <span>Étudiante en 2e année de BTS SIO option SISR.</span>
+          </div>
+          <h1>Étudiante en BTS SIO, spécialité SISR.</h1>
+          <p class="hero-subtitle">
+            Administration des systèmes et des réseaux, configuration réseau, cybersécurité et gestion des infrastructures informatiques
+          </p>
+          <div class="hero-meta">
+            <span>Administration Réseaux</span>
+            <span>cybersécurité</span>
+            <span>Gestion des systèmes</span>
+          </div>
+          <div class="hero-actions">
+            <a href="contact.html" class="btn btn-primary">Me contacter</a>
+            <a href="experiences.html" class="btn btn-ghost">Voir les expériences</a>
+          </div>
+        </div>
+
+        <!-- Colonne centrale : emplacement photo -->
+        <div class="hero-photo-wrapper">
+		  <div class="hero-photo-slot hero-photo-real">
+			<img src="photos/Maphoto-jpeg.jpeg"
+				 alt="Photo de profil d'Aminata O. Diallo"
+				 class="hero-photo-img">
+		  </div>
+		</div>
+
+        <!-- Colonne droite : carte résumé -->
+        <aside class="hero-aside">
+          <div class="hero-card">
+            <div class="hero-card-header">
+              <div class="hero-card-profile">
+                <div class="hero-photo-mini">
+                  <div class="hero-photo-mini-fallback">AD</div>
+                </div>
+                <div class="hero-card-text">
+                  <h2>Aminta O. Diallo</h2>
+                  <p>Étudiante en 2e année de BTS SIO option SISR.</p>
+                </div>
+              </div>
+              
+            </div>
+            <div class="hero-card-body">
+              <p>
+                Étudiante en 2e année de BTS SIO option SISR, je développe mes compétences en administration des systèmes et des réseaux, cybersécurité et gestion des infrastructures informatiques.
+              
+              </p>
+              <div class="hero-card-tags">
+                <span>Réseaux</span>
+                <span>Windows</span>
+                <span>Linux</span>
+                <span>VLAN</span>
+                <span>cybersécurité</span>
+                <span>GLPI</span>
+              </div>
+              <div class="hero-card-footer">
+                <div class="hero-card-kpi">
+                  <span>Formation en administration Systémes et réseaux</span>
+                  <strong>2e année</strong>
+                </div>
+                <div class="hero-card-status">
+                  <span class="hero-card-status-dot"></span>
+                  <span>Profil orienté Systémes Réseaux et cybersécurité</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    © Copyright 2026 - Aminata O. Diallo – Étudiante en 2e année de BTS SIO option SISR.
+  </footer>
+</div>
+</body>
+</html>

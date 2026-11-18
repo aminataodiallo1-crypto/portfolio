@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact – Aminata O. Diallo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Etudiante en 2e année de BTS SIO, option SISR.">
+  <style>
+    /* mêmes styles globaux que les autres pages */
+    :root{--primary:#2563eb;--primary-light:#dbeafe;--bg:#0f172a;--card-bg:#020617;--text:#e5e7eb;--muted:#9ca3af;--accent:#22c55e;--border:#1f2937;--radius:12px;--shadow:0 18px 45px rgba(15,23,42,0.75);--font-main:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;}
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:var(--font-main);background:radial-gradient(circle at top,#1e293b 0,#020617 55%);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;}
+    a{color:inherit;text-decoration:none;}
+    .page{min-height:100vh;display:flex;flex-direction:column;}
+    header{position:sticky;top:0;z-index:50;backdrop-filter:blur(16px);background:linear-gradient(to bottom,rgba(15,23,42,0.92),rgba(15,23,42,0.75),transparent);border-bottom:1px solid rgba(31,41,55,0.7);}
+    .nav{max-width:1120px;margin:0 auto;padding:0.8rem 1.25rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;}
+    .nav-brand{display:flex;align-items:center;gap:0.75rem;}
+    .avatar{width:42px;height:42px;border-radius:999px;border:2px solid rgba(148,163,184,0.6);background:radial-gradient(circle at 30% 0,#38bdf8,#1d4ed8 40%,#020617 100%);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem;color:#e5e7eb;box-shadow:0 8px 20px rgba(15,23,42,0.9);}
+    .brand-text{display:flex;flex-direction:column;gap:0.1rem;}
+    .brand-name{font-weight:600;letter-spacing:0.08em;text-transform:uppercase;font-size:0.8rem;color:#e5e7eb;}
+    .brand-role{font-size:0.75rem;color:var(--muted);}
+    .nav-menu{display:flex;flex-wrap:wrap;gap:0.5rem;font-size:0.85rem;}
+    .nav-menu a{padding:0.4rem 0.8rem;border-radius:999px;color:var(--muted);border:1px solid transparent;transition:all 0.18s ease;}
+    .nav-menu a:hover{color:var(--text);border-color:rgba(55,65,81,0.85);background:rgba(15,23,42,0.9);}
+    .nav-menu a.nav-primary{background:linear-gradient(135deg,#2563eb,#22c55e);color:#f9fafb;border:none;box-shadow:0 10px 25px rgba(37,99,235,0.55);}
+    .container{max-width:1120px;margin:0 auto;padding:1.75rem 1.25rem 3.5rem;}
+    .section-label{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.18em;color:var(--muted);margin-bottom:0.4rem;}
+    .section-title{font-size:1.4rem;margin-bottom:1.25rem;}
+    .card{border-radius:var(--radius);background:rgba(15,23,42,0.96);border:1px solid rgba(31,41,55,0.95);padding:1.25rem 1.35rem;box-shadow:0 16px 40px rgba(15,23,42,0.85);}
+    .contact-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.2fr);gap:1.75rem;align-items:flex-start;}
+    .contact-list{list-style:none;padding-left:0;font-size:0.85rem;color:var(--muted);}
+    .contact-list li{margin-bottom:0.35rem;}
+    .contact-pill{display:inline-flex;align-items:center;gap:0.45rem;padding:0.32rem 0.7rem;border-radius:999px;border:1px solid rgba(55,65,81,0.9);background:rgba(15,23,42,0.96);margin-bottom:0.25rem;font-size:0.8rem;}
+    .contact-form{display:grid;gap:0.75rem;font-size:0.84rem;}
+    .field{display:flex;flex-direction:column;gap:0.3rem;}
+    .field label{color:var(--muted);font-size:0.8rem;}
+    .field input,.field textarea{
+      border-radius:0.7rem;border:1px solid rgba(31,41,55,0.95);
+      background:rgba(15,23,42,0.98);padding:0.6rem 0.7rem;
+      color:var(--text);font-family:inherit;font-size:0.85rem;resize:vertical;min-height:42px;
+    }
+    .field input:focus,.field textarea:focus{
+      outline:none;border-color:rgba(37,99,235,0.85);
+      box-shadow:0 0 0 1px rgba(37,99,235,0.5);
+    }
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:0.55rem 1.25rem;border-radius:999px;font-size:0.9rem;font-weight:500;
+      border:1px solid transparent;cursor:pointer;transition:all 0.18s ease;
+      background:linear-gradient(135deg,#2563eb,#22c55e);color:#f9fafb;
+      box-shadow:0 16px 50px rgba(37,99,235,0.6);
+    }
+    .btn:hover{transform:translateY(-1px);box-shadow:0 20px 55px rgba(37,99,235,0.75);}
+    footer{margin-top:auto;border-top:1px solid rgba(31,41,55,0.9);padding:1rem 1.25rem 2rem;font-size:0.78rem;color:var(--muted);text-align:center;}
+    @media(max-width:900px){.contact-grid{grid-template-columns:minmax(0,1fr);}}
+    @media(max-width:640px){.nav{padding-inline:1rem;}.nav-menu{justify-content:flex-end;}.container{padding-inline:1rem;}}
+  </style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <nav class="nav">
+      <div class="nav-brand">
+        <div class="avatar">AD</div>
+        <div class="brand-text">
+          <div class="brand-name">Aminata O. Diallo</div>
+          <div class="brand-role">Etudiante en 2e année de BTS SIO option SISR </div>
+        </div>
+      </div>
+      <div class="nav-menu">
+        <a href="index.html">Accueil</a>
+        <a href="apropos.html">À propos</a>
+        <a href="competences.html">Compétences</a>
+        <a href="experiences.html">Expériences</a>
+        <a href="formations.html">Formations</a>
+        <a href="projets.html">Projets</a>
+        <a href="contact.html" class="nav-primary">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
+      <section id="contact">
+        <div class="section-label">Contact</div>
+        <h2 class="section-title">Entrer en contact</h2>
+        <div class="contact-grid">
+          <div class="card">
+            <h3>Coordonnées</h3>
+            <p style="font-size:0.85rem;color:var(--muted);margin-bottom:0.75rem;">
+              Voici ci-dessous mes informations de contact détaillées. N'hésitez pas à me joindre par e-mail, téléphone pour discuter de vos projets ou besoins en systèmes, réseaux, administratione .
+            </p>
+            <div class="contact-pill">Localisation : 6 rue des rives de l'oise 95340 Persan </div>
+            <ul class="contact-list">
+              <li>Adresse e-mail : <a href="aminataodiallo1@gmail.com">aminataodiallo1@gmail.com</a></li>
+              <li>Numéro de téléphone : 07 81 70 77 68</li>
+              <li>Profil LinkedIn : </li>
+
+            </ul>
+          </div>
+          <form id="contact-form" class="card contact-form" action="https://formspree.io/f/xojvoznn" method="POST" data-formspree="true">
+            <h3>Formulaire de contact</h3>
+            <div class="field">
+              <label for="name">Nom</label>
+              <input id="name" name="name" type="text" placeholder="Votre nom" required>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="votre.email@exemple.com" required>
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4" placeholder="Décrivez votre besoin ou votre projet" required></textarea>
+            </div>
+            <input type="hidden" name="_subject" value="Nouveau message depuis le site">
+            <div id="form-status" role="status" aria-live="polite" hidden style="font-size:0.9rem;color:var(--muted);margin-top:0.5rem;"></div>
+            <button id="submit-button" type="submit" class="btn">Envoyer le message</button>
+          </form>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+   Aminata O. Diallo – Etudiante en 2e année de BTS SIO option SISR .
+  </footer>
+</div>
+
+<script>
+// Formspree AJAX submission: remplacez 'your-form-id' par votre ID Formspree
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('contact-form');
+  if(!form) return;
+  const status = document.getElementById('form-status');
+  const submitBtn = document.getElementById('submit-button');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if(submitBtn) submitBtn.disabled = true;
+    status.hidden = false;
+    status.textContent = 'Envoi en cours…';
+
+    const formData = new FormData(form);
+    try {
+      const resp = await fetch(form.action, {
+        method: form.method || 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (resp.ok) {
+        status.textContent = 'Message envoyé — merci ! ✅';
+        form.reset();
+      } else {
+        const data = await resp.json().catch(() => null);
+        status.textContent = data?.error || 'Une erreur est survenue lors de l\'envoi. ⚠️';
+      }
+    } catch (err) {
+      status.textContent = 'Impossible de contacter l\'endpoint. Vérifiez l\'URL et votre connexion.';
+    }
+
+    if(submitBtn) submitBtn.disabled = false;
+    // masquer le message après quelques secondes
+    setTimeout(() => { status.hidden = true; }, 8000);
+  });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Formations – Aminata O. Diallo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Formations académiques et certifications d'Aminata O. Diallo dans le domaine des systèmes d'information.">
+ <style>
+    :root{--primary:#2563eb;--primary-light:#dbeafe;--bg:#0f172a;--card-bg:#020617;--text:#e5e7eb;--muted:#9ca3af;--accent:#22c55e;--border:#1f2937;--radius:12px;--shadow:0 18px 45px rgba(15,23,42,0.75);--font-main:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;}
+    *{margin:0;padding:0;box-sizing:border-box;}
+    html, body {height:100%;}
+    body{font-family:var(--font-main);background:radial-gradient(circle at top,#1e293b 0,#020617 55%);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;}
+    a{color:inherit;text-decoration:none;}
+    .page{min-height:100vh;display:flex;flex-direction:column;}
+    main{flex:1;}
+    header{position:sticky;top:0;z-index:50;backdrop-filter:blur(16px);background:linear-gradient(to bottom,rgba(15,23,42,0.92),rgba(15,23,42,0.75),transparent);border-bottom:1px solid rgba(31,41,55,0.7);}
+    .nav{max-width:1120px;margin:0 auto;padding:0.8rem 1.25rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;}
+    .nav-brand{display:flex;align-items:center;gap:0.75rem;}
+    .avatar{width:42px;height:42px;border-radius:999px;border:2px solid rgba(148,163,184,0.6);background:radial-gradient(circle at 30% 0,#38bdf8,#1d4ed8 40%,#020617 100%);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem;color:#e5e7eb;box-shadow:0 8px 20px rgba(15,23,42,0.9);}
+    .brand-text{display:flex;flex-direction:column;gap:0.1rem;}
+    .brand-name{font-weight:600;letter-spacing:0.08em;text-transform:uppercase;font-size:0.8rem;color:#e5e7eb;}
+    .brand-role{font-size:0.75rem;color:var(--muted);}
+    .nav-menu{display:flex;flex-wrap:wrap;gap:0.5rem;font-size:0.85rem;}
+    .nav-menu a{padding:0.4rem 0.8rem;border-radius:999px;color:var(--muted);border:1px solid transparent;transition:all 0.18s ease;}
+    .nav-menu a:hover{color:var(--text);border-color:rgba(55,65,81,0.85);background:rgba(15,23,42,0.9);}
+    .nav-menu a.nav-primary{background:linear-gradient(135deg,#2563eb,#22c55e);color:#f9fafb;border:none;box-shadow:0 10px 25px rgba(37,99,235,0.55);}
+    .container{max-width:1120px;margin:0 auto;padding:1.75rem 1.25rem 3.5rem;}
+    .section-label{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.18em;color:var(--muted);margin-bottom:0.4rem;}
+    .section-title{font-size:1.4rem;margin-bottom:1.25rem;}
+    .card{border-radius:var(--radius);background:rgba(15,23,42,0.96);border:1px solid rgba(31,41,55,0.95);padding:1.25rem 1.35rem;box-shadow:0 16px 40px rgba(15,23,42,0.85);}
+
+    /* timeline styles from experiences.html */
+    .timeline{position:relative;}
+    .timeline::before{content:"";position:absolute;left:14px;top:3px;bottom:0;width:2px;background:linear-gradient(to bottom,rgba(148,163,184,0.5),rgba(55,65,81,0.2));}
+    .timeline-item{position:relative;padding-left:2.65rem;padding-bottom:1.7rem;}
+    .timeline-item:last-child{padding-bottom:0;}
+    .timeline-marker{position:absolute;left:6px;top:3px;width:16px;height:16px;border-radius:999px;border:2px solid #020617;background:radial-gradient(circle at 30% 0,#38bdf8,#2563eb 45%,#020617 100%);box-shadow:0 0 0 6px rgba(37,99,235,0.3);}
+    .timeline-header{display:flex;flex-wrap:wrap;gap:0.5rem 0.75rem;align-items:baseline;margin-bottom:0.35rem;}
+    .timeline-role{font-size:0.92rem;font-weight:500;}
+    .timeline-company{font-size:0.86rem;color:var(--muted);}
+    .timeline-meta{display:flex;flex-wrap:wrap;gap:0.45rem;font-size:0.75rem;color:var(--muted);margin-bottom:0.55rem;}
+    .timeline-badge{padding:0.18rem 0.45rem;border-radius:999px;border:1px solid rgba(55,65,81,0.9);background:rgba(15,23,42,0.96);}
+    .timeline-body{font-size:0.85rem;color:var(--muted);}
+    .timeline-body ul{margin-top:0.4rem;padding-left:1.1rem;}
+    .timeline-body li{margin-bottom:0.2rem;}
+
+    .education-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:1.6rem;align-items:flex-start;}
+    .cert-list{list-style:none;padding-left:0;font-size:0.84rem;color:var(--muted);}
+    .cert-list li{margin-bottom:0.25rem;}
+
+    footer{margin-top:auto;border-top:1px solid rgba(31,41,55,0.9);padding:1rem 1.25rem 2rem;font-size:0.78rem;color:var(--muted);text-align:center;}
+    @media(max-width:900px){.education-grid{grid-template-columns:minmax(0,1fr);}}
+    @media(max-width:640px){.nav{padding-inline:1rem;}.nav-menu{justify-content:flex-end;}.container{padding-inline:1rem;}}
+  </style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <nav class="nav">
+      <div class="nav-brand">
+        <div class="avatar">AD</div>
+        <div class="brand-text">
+          <div class="brand-name">Aminata O. Diallo</div>
+          <div class="brand-role">Étudiante en 2e année de BTS SIO option SISR</div>
+        </div>
+      </div>
+      <div class="nav-menu">
+        <a href="index.html">Accueil</a>
+        <a href="apropos.html">À propos</a>
+        <a href="competences.html">Compétences</a>
+        <a href="experiences.html">Expériences</a>
+        <a href="formations.html" class="nav-primary">Formations</a>
+        <a href="projets.html">Projets</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
+      <section id="formations">
+        <div class="section-label">Formations</div>
+        <h2 class="section-title">Formations & Veille technologiques</h2>
+        <div class="education-grid">
+          <div class="card">
+            <div class="timeline">
+              <article class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-header">
+                  <div class="timeline-role"> BTS SIO option SISR</div>
+                  <div class="timeline-company">Institut F2i – vincennes</div>
+                </div>
+                <div class="timeline-meta">
+                  <span class="timeline-badge">2025 – 2027</span>
+                  <span>Parcours académique</span>
+                </div>
+                <div class="timeline-body">
+                  <p><li>Administration des systèmes et réseaux</li></p>
+                  <p><li>Windows / Windows Server</li></p> 
+                  <p><li>Linux / Debian</li></p>
+                  <p><li>Réseaux TCP/IP et IPv4</li></p>
+                  <p><li>VLAN, DHCP, DNS</li></p>
+                  <p><li>Cisco</li></p>
+                  <p><li>Cybersécurité</li></p>
+                  <p><li>Virtualisation</li></p>
+                </div>
+              </article>
+
+              <article class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-header">
+                  <div class="timeline-role">Baccalauréat – Sciences expérimentales</div>
+                  <div class="timeline-company">Lycée La Lanterne – MALI</div>
+                </div>
+                <div class="timeline-meta">
+                  <span class="timeline-badge">2024 – 2025</span>
+                </div>
+                <div class="timeline-body">
+                  <p><li>Math, Physique, Chimie, SVT</li></p>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <aside class="card">
+            <h3>Veille technologiques</h3>
+            <div class="timeline">
+              <article class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-header">
+                  <div class="timeline-role">Windows Server et Active Directory</div>
+                  <div class="timeline-company"><li>Sécuriser les infrastructures informatiques</li></div>
+                  <div class="timeline-company"><li>Mise en place d'une solution de gestion informatique GLPI</li></div>
+                  <div class="timeline-company"><li>Gestion des tickets</li></div>
+                </div>
+              </article>
+
+              <article class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-header">
+                  <div class="timeline-role">Sécurisation des infrastructures informatiques face aux cyberattaques</div>
+                  <div class="timeline-company"><li>Ransomwares, Phishing</li></div>
+                </div>
+              </article>
+
+
+              
+            </div>
+          </aside>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+   Aminata O. Diallo – Etudiante en 2e année de BTS SIO option SISR.
+  </footer>
+</div>
+</body>
+</html>

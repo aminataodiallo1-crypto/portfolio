@@ -1,0 +1,1569 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Aminata O. Diallo – Étudiante en 2e année de BTS SIO option SISR</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Étudiante en 2e année de BTS SIO option SISR,spécialisée dans les systèmes, réseaux et la cybersécurité.">
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-light: #dbeafe;
+      --bg: #0f172a;
+      --card-bg: #020617;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #22c55e;
+      --border: #1f2937;
+      --radius: 12px;
+      --shadow: 0 18px 45px rgba(15,23,42,0.75);
+      --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background: radial-gradient(circle at top, #1e293b 0, #020617 55%);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Layout principal */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      background: linear-gradient(to bottom, rgba(15,23,42,0.92), rgba(15,23,42,0.75), transparent);
+      border-bottom: 1px solid rgba(31,41,55,0.7);
+    }
+
+    .nav {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0.8rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      border: 2px solid rgba(148,163,184,0.6);
+      background: radial-gradient(circle at 30% 0, #38bdf8, #1d4ed8 40%, #020617 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #e5e7eb;
+      box-shadow: 0 8px 20px rgba(15,23,42,0.9);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .brand-name {
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      color: #e5e7eb;
+    }
+
+    .brand-role {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .nav-menu {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+    }
+
+    .nav-menu a {
+      padding: 0.4rem 0.8rem;
+      border-radius: 999px;
+      color: var(--muted);
+      border: 1px solid transparent;
+      transition: all 0.18s ease;
+    }
+
+    .nav-menu a:hover {
+      color: var(--text);
+      border-color: rgba(55,65,81,0.85);
+      background: rgba(15,23,42,0.9);
+    }
+
+    .nav-menu a.nav-primary {
+      background: linear-gradient(135deg, #2563eb, #22c55e);
+      color: #f9fafb;
+      border: none;
+      box-shadow: 0 10px 25px rgba(37,99,235,0.55);
+    }
+
+    /* Contenu */
+    main {
+      flex: 1;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 1.75rem 1.25rem 3.5rem;
+    }
+
+    section {
+      margin-bottom: 3.5rem;
+    }
+
+    section:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    /* Hero / Accueil */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
+      gap: 2.25rem;
+      align-items: center;
+      padding-top: 1.25rem;
+      padding-bottom: 2.25rem;
+    }
+
+    .hero-main h1 {
+      font-size: clamp(1.9rem, 3vw, 2.4rem);
+      line-height: 1.2;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.8rem;
+      padding: 0.25rem 0.8rem 0.25rem 0.25rem;
+      border-radius: 999px;
+      border: 1px solid rgba(55,65,81,0.9);
+      background: rgba(15,23,42,0.88);
+      margin-bottom: 0.7rem;
+    }
+
+    .hero-badge-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 0, #22c55e, #16a34a);
+      box-shadow: 0 0 0 6px rgba(34,197,94,0.28);
+    }
+
+    .hero-subtitle {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-bottom: 1.8rem;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .hero-meta span {
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(55,65,81,0.85);
+      background: rgba(15,23,42,0.9);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.55rem 1.25rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: all 0.18s ease;
+      background: transparent;
+      color: inherit;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #2563eb, #22c55e);
+      color: #f9fafb;
+      box-shadow: 0 16px 50px rgba(37,99,235,0.6);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 20px 55px rgba(37,99,235,0.75);
+    }
+
+    .btn-ghost {
+      border-color: rgba(55,65,81,0.85);
+      color: var(--muted);
+      background: rgba(15,23,42,0.9);
+    }
+
+    .btn-ghost:hover {
+      color: var(--text);
+      border-color: rgba(75,85,99,0.95);
+      background: rgba(15,23,42,0.95);
+    }
+
+    .hero-aside {
+      position: relative;
+      height: 100%;
+    }
+
+    .hero-card {
+      position: relative;
+      border-radius: 24px;
+      background: radial-gradient(circle at top, #1f2937 0, #020617 78%);
+      padding: 1.5rem 1.35rem;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(31,41,55,0.9);
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 0 0, rgba(56,189,248,0.25), transparent 55%);
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    .hero-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.1rem;
+      margin-bottom: 1.2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-card-profile {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .hero-photo {
+      width: 60px;
+      height: 60px;
+      border-radius: 18px;
+      background: radial-gradient(circle at 10% 0, #38bdf8, #1d4ed8 35%, #020617 100%);
+      border: 1px solid rgba(148,163,184,0.7);
+      box-shadow: 0 14px 32px rgba(15,23,42,0.85);
+    }
+
+    .hero-photo-fallback {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 1.4rem;
+      color: #eff6ff;
+    }
+
+    .hero-card-text h2 {
+      font-size: 1rem;
+      margin-bottom: 0.1rem;
+    }
+
+    .hero-card-text p {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .hero-card-pill {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(55,65,81,0.9);
+      color: var(--muted);
+      background: rgba(15,23,42,0.92);
+    }
+
+    .hero-card-body {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-card-body p {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .hero-card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .hero-card-tags span {
+      font-size: 0.74rem;
+      padding: 0.18rem 0.55rem;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.9);
+      border: 1px solid rgba(55,65,81,0.85);
+      color: #e5e7eb;
+    }
+
+    .hero-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .hero-card-kpi {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .hero-card-kpi strong {
+      font-size: 0.9rem;
+      color: #e5e7eb;
+    }
+
+    .hero-card-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.95);
+      border: 1px solid rgba(31,41,55,0.9);
+    }
+
+    .hero-card-status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      box-shadow: 0 0 0 5px rgba(34,197,94,0.22);
+    }
+
+    /* À propos */
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 2.15fr) minmax(0, 2fr);
+      gap: 1.9rem;
+      align-items: flex-start;
+    }
+
+    .card {
+      border-radius: var(--radius);
+      background: rgba(15,23,42,0.96);
+      border: 1px solid rgba(31,41,55,0.95);
+      padding: 1.25rem 1.35rem;
+      box-shadow: 0 16px 40px rgba(15,23,42,0.85);
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .about-text {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .about-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.1rem;
+      font-size: 0.8rem;
+    }
+
+    .about-meta-item {
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(55,65,81,0.9);
+      color: var(--muted);
+      background: rgba(15,23,42,0.96);
+    }
+
+    .pill-strong {
+      color: #e5e7eb;
+      font-weight: 500;
+    }
+
+    .skills-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.2rem;
+    }
+
+    .skills-tags span {
+      font-size: 0.75rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.9);
+      border: 1px solid rgba(55,65,81,0.9);
+      color: #e5e7eb;
+    }
+
+    /* Compétences */
+    .skills-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+      gap: 1.75rem;
+      align-items: flex-start;
+    }
+
+    .skills-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .skills-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .skills-group-title {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      margin-bottom: 0.45rem;
+    }
+
+    .skill-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.55rem 0;
+      border-bottom: 1px dashed rgba(31,41,55,0.9);
+      font-size: 0.85rem;
+    }
+
+    .skill-item:last-child {
+      border-bottom: none;
+    }
+
+    .skill-main {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .skill-icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 0.75rem;
+      border: 1px solid rgba(55,65,81,0.9);
+      background: radial-gradient(circle at 20% 0, rgba(56,189,248,0.65), rgba(37,99,235,0.9));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      color: #f9fafb;
+    }
+
+    .skill-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .skill-name {
+      font-size: 0.85rem;
+    }
+
+    .skill-extra {
+      font-size: 0.72rem;
+      color: var(--muted);
+    }
+
+    .skill-level {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .dots {
+      display: flex;
+      gap: 0.2rem;
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: rgba(51,65,85,0.9);
+    }
+
+    .dot.active {
+      background: linear-gradient(135deg, #2563eb, #22c55e);
+      box-shadow: 0 0 0 3px rgba(37,99,235,0.35);
+    }
+
+    .skill-years {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .skills-summary p {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-bottom: 0.9rem;
+    }
+
+    .skills-summary-list {
+      list-style: none;
+      padding-left: 0;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .skills-summary-list li {
+      margin-bottom: 0.25rem;
+    }
+
+    /* Expériences */
+    .timeline {
+      position: relative;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 14px;
+      top: 3px;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, rgba(148,163,184,0.5), rgba(55,65,81,0.2));
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 2.65rem;
+      padding-bottom: 1.7rem;
+    }
+
+    .timeline-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .timeline-marker {
+      position: absolute;
+      left: 6px;
+      top: 3px;
+      width: 16px;
+      height: 16px;
+      border-radius: 999px;
+      border: 2px solid #020617;
+      background: radial-gradient(circle at 30% 0, #38bdf8, #2563eb 45%, #020617 100%);
+      box-shadow: 0 0 0 6px rgba(37,99,235,0.3);
+    }
+
+    .timeline-header {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 0.75rem;
+      align-items: baseline;
+      margin-bottom: 0.35rem;
+    }
+
+    .timeline-role {
+      font-size: 0.92rem;
+      font-weight: 500;
+    }
+
+    .timeline-company {
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+
+    .timeline-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-bottom: 0.55rem;
+    }
+
+    .timeline-badge {
+      padding: 0.18rem 0.45rem;
+      border-radius: 999px;
+      border: 1px solid rgba(55,65,81,0.9);
+      background: rgba(15,23,42,0.96);
+    }
+
+    .timeline-body {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .timeline-body ul {
+      margin-top: 0.4rem;
+      padding-left: 1.1rem;
+    }
+
+    .timeline-body li {
+      margin-bottom: 0.2rem;
+    }
+
+    /* Formations & certifs */
+    .education-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 1.6rem;
+      align-items: flex-start;
+    }
+
+    .education-item {
+      margin-bottom: 0.9rem;
+      font-size: 0.86rem;
+    }
+
+    .education-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .edu-title {
+      font-weight: 500;
+      margin-bottom: 0.1rem;
+    }
+
+    .edu-school {
+      color: var(--muted);
+      font-size: 0.8rem;
+      margin-bottom: 0.1rem;
+    }
+
+    .edu-year {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .cert-list {
+      list-style: none;
+      padding-left: 0;
+      font-size: 0.84rem;
+      color: var(--muted);
+    }
+
+    .cert-list li {
+      margin-bottom: 0.25rem;
+    }
+
+    /* Projets (textes issus du CV) */
+    .projects-note {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .project-item {
+      margin-bottom: 1rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .project-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .project-title {
+      font-weight: 500;
+      margin-bottom: 0.1rem;
+    }
+
+    .project-tagline {
+      font-size: 0.8rem;
+      margin-bottom: 0.25rem;
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
+      gap: 1.75rem;
+      align-items: flex-start;
+    }
+
+    .contact-list {
+      list-style: none;
+      padding-left: 0;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .contact-list li {
+      margin-bottom: 0.35rem;
+    }
+
+    .contact-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.32rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(55,65,81,0.9);
+      background: rgba(15,23,42,0.96);
+      margin-bottom: 0.25rem;
+      font-size: 0.8rem;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 0.75rem;
+      font-size: 0.84rem;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .field label {
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    .field input,
+    .field textarea {
+      border-radius: 0.7rem;
+      border: 1px solid rgba(31,41,55,0.95);
+      background: rgba(15,23,42,0.98);
+      padding: 0.6rem 0.7rem;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.85rem;
+      resize: vertical;
+      min-height: 42px;
+    }
+
+    .field input:focus,
+    .field textarea:focus {
+      outline: none;
+      border-color: rgba(37,99,235,0.85);
+      box-shadow: 0 0 0 1px rgba(37,99,235,0.5);
+    }
+
+    footer {
+      border-top: 1px solid rgba(31,41,55,0.9);
+      padding: 1rem 1.25rem 2rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    /* Responsiveness */
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero-aside {
+        order: -1;
+      }
+      .about-grid,
+      .skills-layout,
+      .education-grid,
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero-card {
+        margin-top: 0.2rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav {
+        padding-inline: 1rem;
+      }
+      .nav-menu {
+        justify-content: flex-end;
+      }
+      .hero {
+        padding-top: 1rem;
+      }
+      .container {
+        padding-inline: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <!-- Navigation -->
+  <header>
+    <nav class="nav">
+      <div class="nav-brand">
+        <div class="avatar">AD</div>
+        <div class="brand-text">
+          <div class="brand-name">Aminata O. Diallo</div>
+          <div class="brand-role">Etudiante en 2e année de BTS SIO option SISR</div>
+        </div>
+      </div>
+      <div class="nav-menu">
+        <a href="#accueil" class="nav-primary">Accueil</a>
+        <a href="#apropos">À propos</a>
+        <a href="#competences">Compétences</a>
+        <a href="#experiences">Expériences</a>
+        <a href="#formations">Formations</a>
+        <a href="#projets">Projets</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Accueil -->
+    <div class="container" id="accueil">
+      <section class="hero">
+        <div class="hero-main">
+          <div class="hero-badge">
+            <div class="hero-badge-dot"></div>
+            <span>Étudiante en 2e année de BTS SIO option SISR</span>
+          </div>
+          <h1>Ingénieur logiciel spécialisé en solutions middleware & intégration d'API</h1>
+          <p class="hero-subtitle">
+            Développement d'API, intégration d'applications et de données, conception de solutions middleware performantes et évolutives.
+          </p>
+          <div class="hero-meta">
+            <span>Administration systèmes & Réseaux</span>
+            <span>Support informatique</span>
+            <span>Business Intelligence</span>
+            <span>infrastructures informatiques</span>
+          </div>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">Me contacter</a>
+            <a href="#experiences" class="btn btn-ghost">Voir les expériences</a>
+          </div>
+        </div>
+        <aside class="hero-aside">
+          <div class="hero-card">
+            <div class="hero-card-header">
+              <div class="hero-card-profile">
+                <div class="hero-photo">
+                  <div class="hero-photo-fallback">A</div>
+                </div>
+                <div class="hero-card-text">
+                  <h2>Aminata O. Diallo</h2>
+                  <p>Etudiante en BTS SIO – Systémes & Réseaux</p>
+                </div>
+              </div>
+              <div class="hero-card-pill">
+                Français · Anglais (B1)
+              </div>
+            </div>
+            <div class="hero-card-body">
+              <p>
+                Expérience confirmée dans le développement d'applications middleware, l'intégration de données et
+                d'applications, ainsi que le développement d'API au sein d'environnements exigeants.
+              </p>
+              <div class="hero-card-tags">
+                <span>Réseaux TCP/IP<spam>
+          
+               <span>Windows & Linux</span>
+                <span>VMware</span>
+                <span>GLPI</span>
+                <span>Support informatique</span>
+                <span>cybersécurité</span>
+              </div>
+              <div class="hero-card-footer">
+                <div class="hero-card-kpi">
+                  <span>Etudiante en BTS SIO option SISR</span>
+                  <strong>2e année</strong>
+                </div>
+                <div class="hero-card-status">
+                  <span class="hero-card-status-dot"></span>
+                  <span>Profil orienté intégration & performance</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <!-- À propos -->
+      <section id="apropos">
+        <div class="section-label">À propos</div>
+        <h2 class="section-title">Profil</h2>
+        <div class="about-grid">
+          <article class="card">
+            <h3>Vision & valeur ajoutée</h3>
+            <p class="about-text">
+              Je possède une expérience solide dans le développement des applications middleware et intervient sur
+              des missions d'intégration de données, d'applications et de développement d'API. Il se spécialise dans
+              la conception et la mise en œuvre de solutions middleware performantes et évolutives, afin de fiabiliser
+              les échanges entre systèmes et d'améliorer la qualité des données.
+            </p>
+            <div class="about-meta">
+              <span class="about-meta-item"><span class="pill-strong">3 ans</span> de développement d'API</span>
+              <span class="about-meta-item">Environnements : Anypoint, Informatica, AtomSphere</span>
+              <span class="about-meta-item">Domaines : transport, propreté & service</span>
+            </div>
+          </article>
+          <aside class="card">
+            <h3>Domaines d'expertise</h3>
+            <div class="skills-tags">
+              <span>API</span>
+              <span>REST</span>
+              <span>SOAP</span>
+              <span>Développement d'API middleware</span>
+              <span>Intégration de données</span>
+              <span>Business Intelligence</span>
+            </div>
+            <div class="skills-tags" style="margin-top:0.6rem;">
+              <span>Anypoint Studio / Code Builder</span>
+              <span>Anypoint Platform</span>
+              <span>Informatica (Application & Data Integration)</span>
+              <span>AtomSphere</span>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- Compétences -->
+      <section id="competences">
+        <div class="section-label">Compétences</div>
+        <h2 class="section-title">Compétences techniques & métiers</h2>
+        <div class="skills-layout">
+          <div class="card">
+            <div class="skills-group">
+              <div class="skills-group-title">Technologies & outils</div>
+
+              <!-- MuleSoft -->
+              <div class="skill-item">
+                <div class="skill-main">
+                  <div class="skill-icon">M</div>
+                  <div class="skill-meta">
+                    <span class="skill-name">MuleSoft</span>
+                    <span class="skill-extra">Spécialisation plateforme d'échange de données</span>
+                  </div>
+                </div>
+                <div>
+                  <div class="skill-level">
+                    <span>Avancé</span>
+                    <div class="dots">
+                      <span class="dot active"></span>
+                      <span class="dot active"></span>
+                      <span class="dot active"></span>
+                      <span class="dot"></span>
+                    </div>
+                  </div>
+                  <div class="skill-years">2 ans</div>
+                </div>
+              </div>
+
+              <!-- Informatica -->
+              <div class="skill-item">
+                <div class="skill-main">
+                  <div class="skill-icon">I</div>
+                  <div class="skill-meta">
+                    <span class="skill-name">Informatica</span>
+                    <span class="skill-extra">Application & Data Integration, mappings & ETL</span>
+                  </div>
+                </div>
+                <div>
+                  <div class="skill-level">
+                    <span>Intermédiaire</span>
+                    <div class="dots">
+                      <span class="dot active"></span>
+                      <span class="dot active"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                    </div>
+                  </div>
+                  <div class="skill-years">1 an</div>
+                </div>
+              </div>
+
+              <!-- Boomi -->
+              <div class="skill-item">
+                <div class="skill-main">
+                  <div class="skill-icon">B</div>
+                  <div class="skill-meta">
+                    <span class="skill-name">Boomi</span>
+                    <span class="skill-extra">Certified associate developer</span>
+                  </div>
+                </div>
+                <div>
+                  <div class="skill-level">
+                    <span>Débutant</span>
+                    <div class="dots">
+                      <span class="dot active"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                    </div>
+                  </div>
+                  <div class="skill-years">1 an</div>
+                </div>
+              </div>
+
+              <!-- Power BI / Query / DAX -->
+              <div class="skill-item">
+                <div class="skill-main">
+                  <div class="skill-icon">BI</div>
+                  <div class="skill-meta">
+                    <span class="skill-name">Power BI / Power Query / DAX</span>
+                    <span class="skill-extra">Chaîne décisionnelle & tableaux de bord</span>
+                  </div>
+                </div>
+                <div>
+                  <div class="skill-level">
+                    <span>Débutant</span>
+                    <div class="dots">
+                      <span class="dot active"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                    </div>
+                  </div>
+                  <div class="skill-years">1 an</div>
+                </div>
+              </div>
+
+              <!-- Axway -->
+              <div class="skill-item">
+                <div class="skill-main">
+                  <div class="skill-icon">A</div>
+                  <div class="skill-meta">
+                    <span class="skill-name">Axway</span>
+                    <span class="skill-extra">Amplify Fusion, MFT</span>
+                  </div>
+                </div>
+                <div>
+                  <div class="skill-level">
+                    <span>Débutant</span>
+                    <div class="dots">
+                      <span class="dot active"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                    </div>
+                  </div>
+                  <div class="skill-years">1 an</div>
+                </div>
+              </div>
+
+              <!-- REST/SOAP -->
+              <div class="skill-item">
+                <div class="skill-main">
+                  <div class="skill-icon">API</div>
+                  <div class="skill-meta">
+                    <span class="skill-name">REST / SOAP</span>
+                    <span class="skill-extra">Conception & développement de services</span>
+                  </div>
+                </div>
+                <div>
+                  <div class="skill-level">
+                    <span>Avancé</span>
+                    <div class="dots">
+                      <span class="dot active"></span>
+                      <span class="dot active"></span>
+                      <span class="dot active"></span>
+                      <span class="dot"></span>
+                    </div>
+                  </div>
+                  <div class="skill-years">3 ans</div>
+                </div>
+              </div>
+
+              <!-- Azure DevOps -->
+              <div class="skill-item">
+                <div class="skill-main">
+                  <div class="skill-icon">AZ</div>
+                  <div class="skill-meta">
+                    <span class="skill-name">Azure DevOps</span>
+                    <span class="skill-extra">Industrialisation & déploiement</span>
+                  </div>
+                </div>
+                <div>
+                  <div class="skill-level">
+                    <span>Débutant</span>
+                    <div class="dots">
+                      <span class="dot active"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                    </div>
+                  </div>
+                  <div class="skill-years">1 an</div>
+                </div>
+              </div>
+
+              <!-- Front-end -->
+              <div class="skill-item">
+                <div class="skill-main">
+                  <div class="skill-icon">FE</div>
+                  <div class="skill-meta">
+                    <span class="skill-name">Front-end (HTML / CSS)</span>
+                  </div>
+                </div>
+                <div>
+                  <div class="skill-level">
+                    <span>Débutant</span>
+                    <div class="dots">
+                      <span class="dot active"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                    </div>
+                  </div>
+                  <div class="skill-years">1 an</div>
+                </div>
+              </div>
+
+              <!-- Python -->
+              <div class="skill-item">
+                <div class="skill-main">
+                  <div class="skill-icon">Py</div>
+                  <div class="skill-meta">
+                    <span class="skill-name">Python</span>
+                  </div>
+                </div>
+                <div>
+                  <div class="skill-level">
+                    <span>Débutant</span>
+                    <div class="dots">
+                      <span class="dot active"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                    </div>
+                  </div>
+                  <div class="skill-years">1 an</div>
+                </div>
+              </div>
+
+              <!-- Confluent Kafka, GitLab, Postman, SQL Server -->
+              <div class="skill-item">
+                <div class="skill-main">
+                  <div class="skill-icon">DS</div>
+                  <div class="skill-meta">
+                    <span class="skill-name">Confluent Kafka, GitLab, Postman, SQL Server</span>
+                  </div>
+                </div>
+                <div>
+                  <div class="skill-level">
+                    <span>Avancé</span>
+                    <div class="dots">
+                      <span class="dot active"></span>
+                      <span class="dot active"></span>
+                      <span class="dot active"></span>
+                      <span class="dot"></span>
+                    </div>
+                  </div>
+                  <div class="skill-years">2 ans</div>
+                </div>
+              </div>
+
+              <!-- Java & NoSQL -->
+              <div class="skill-item">
+                <div class="skill-main">
+                  <div class="skill-icon">J</div>
+                  <div class="skill-meta">
+                    <span class="skill-name">Java & NoSQL</span>
+                  </div>
+                </div>
+                <div>
+                  <div class="skill-level">
+                    <span>Débutant</span>
+                    <div class="dots">
+                      <span class="dot active"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                    </div>
+                  </div>
+                  <div class="skill-years">1 an</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="skills-group">
+              <div class="skills-group-title">Domaines & méthodologie</div>
+
+              <!-- Programmation -->
+              <div class="skill-item">
+                <div class="skill-main">
+                  <div class="skill-icon">D</div>
+                  <div class="skill-meta">
+                    <span class="skill-name">Programmation & développement</span>
+                  </div>
+                </div>
+                <div>
+                  <div class="skill-level">
+                    <span>Intermédiaire</span>
+                    <div class="dots">
+                      <span class="dot active"></span>
+                      <span class="dot active"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                    </div>
+                  </div>
+                  <div class="skill-years">3 ans</div>
+                </div>
+              </div>
+
+              <!-- Gestion de projet -->
+              <div class="skill-item">
+                <div class="skill-main">
+                  <div class="skill-icon">GP</div>
+                  <div class="skill-meta">
+                    <span class="skill-name">Gestion de projet informatique</span>
+                  </div>
+                </div>
+                <div>
+                  <div class="skill-level">
+                    <span>Débutant</span>
+                    <div class="dots">
+                      <span class="dot active"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                    </div>
+                  </div>
+                  <div class="skill-years">1 an</div>
+                </div>
+              </div>
+
+              <!-- Connaissances sectorielles -->
+              <div class="skill-item">
+                <div class="skill-main">
+                  <div class="skill-icon">S</div>
+                  <div class="skill-meta">
+                    <span class="skill-name">Secteurs : transport, propreté & service</span>
+                  </div>
+                </div>
+                <div>
+                  <div class="skill-level">
+                    <span>Fondamentaux</span>
+                    <div class="dots">
+                      <span class="dot active"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                    </div>
+                  </div>
+                  <div class="skill-years">Connaissances</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <aside class="card skills-summary">
+            <h3>Résumé de compétences</h3>
+            <p>
+              Le profil combine expertise en développement d'API, intégration de données et outils middleware, avec une
+              expérience concrète sur MuleSoft, Informatica, Boomi et les plateformes d'intégration associées.
+            </p>
+            <p>
+              Les missions réalisées couvrent la mise en place de plateformes d'échange de données, l'industrialisation
+              des flux, ainsi que la création d'outils décisionnels basés sur Power BI.
+            </p>
+            <ul class="skills-summary-list">
+              <li>Développement d'API REST et SOAP pour des environnements complexes.</li>
+              <li>Conception de mappings, flux ETL et entrepôts de données orientés décisionnel.</li>
+              <li>Déploiement et supervision d'applications d'intégration sur CloudHub et On Premise.</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <!-- Expériences professionnelles -->
+      <section id="experiences">
+        <div class="section-label">Expériences</div>
+        <h2 class="section-title">Expériences professionnelles</h2>
+        <div class="card">
+          <div class="timeline">
+            <!-- CGI / Effia -->
+            <article class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-header">
+                <div class="timeline-role">Ingénieur logiciel – Développement d'API & intégration</div>
+                <div class="timeline-company">CGI · Effia – Projet d'intégration avec Informatica</div>
+              </div>
+              <div class="timeline-meta">
+                <span class="timeline-badge">12/2024 – 08/2025</span>
+                <span>Filiale de Keolis spécialisée dans la gestion de parkings</span>
+              </div>
+              <div class="timeline-body">
+                <p>
+                  Projet visant à développer des API pour différents domaines métiers (clients, véhicules, poches,
+                  Orbility) et à alimenter l'entrepôt de données MDM via des flux ETL, afin d'améliorer la
+                  communication entre applications internes, l'efficacité des processus et la qualité des données.
+                </p>
+                <ul>
+                  <li>Développement d'API REST avec Informatica (Application Integration).</li>
+                  <li>Conception et optimisation des mappings et flux ETL avec Informatica (Data Integration).</li>
+                  <li>Validation de la qualité des développements par des tests unitaires et d'intégration.</li>
+                  <li>Amélioration et évolution des flux existants selon les nouveaux besoins.</li>
+                  <li>Rédaction des spécifications techniques et de la documentation des solutions.</li>
+                </ul>
+              </div>
+            </article>
+
+            <!-- CGI / GSF -->
+            <article class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-header">
+                <div class="timeline-role">Ingénieur logiciel – Projet build MuleSoft</div>
+                <div class="timeline-company">CGI · GSF – Services de nettoyage et de propreté</div>
+              </div>
+              <div class="timeline-meta">
+                <span class="timeline-badge">12/2022 – 09/2024</span>
+                <span>Plateforme d'échange de données MuleSoft</span>
+              </div>
+              <div class="timeline-body">
+                <p>
+                  Mise en place d'une plateforme d'échange de données permettant aux applications de l'entreprise de
+                  communiquer via MuleSoft, afin d'optimiser la fluidité des processus, la qualité des données et
+                  la réactivité opérationnelle.
+                </p>
+                <ul>
+                  <li>Définition des données d'entrée et de sortie des API en RAML pour garantir cohérence et réutilisabilité.</li>
+                  <li>Développement de services REST et SOAP avec MuleSoft 4.</li>
+                  <li>Réalisation de tests unitaires et d'intégration.</li>
+                  <li>Déploiement des applications sur CloudHub et On Premise (LAN, DMZ) via Azure DevOps.</li>
+                  <li>Rédaction des spécifications techniques et fonctionnelles pour faciliter maintenabilité et évolutivité.</li>
+                </ul>
+              </div>
+            </article>
+
+            <!-- GRDF -->
+            <article class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-header">
+                <div class="timeline-role">Consultant BI – Outils décisionnels</div>
+                <div class="timeline-company">GRDF – Projet de mise en place des outils décisionnels</div>
+              </div>
+              <div class="timeline-meta">
+                <span class="timeline-badge">04/2022 – 09/2022</span>
+                <span>Chaîne décisionnelle complète & tableaux de bord</span>
+              </div>
+              <div class="timeline-body">
+                <p>
+                  Projet visant à déployer une chaîne complète de Business Intelligence, de la collecte des données
+                  à la création de tableaux de bord dynamiques, pour fournir aux décideurs des outils fiables et
+                  exploitables.
+                </p>
+                <ul>
+                  <li>Collecte, nettoyage et transformation des données pour assurer qualité et exploitabilité.</li>
+                  <li>Conception d'un entrepôt de données sur un modèle en étoile.</li>
+                  <li>Développement de KPI pertinents pour le suivi de la performance.</li>
+                  <li>Conception et maintien de tableaux de bord interactifs.</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Formations -->
+      <section id="formations">
+        <div class="section-label">Formations</div>
+        <h2 class="section-title">Formations & certifications</h2>
+        <div class="education-grid">
+          <div class="card">
+            <h3>Parcours académique</h3>
+            <div class="education-item">
+              <div class="edu-title">Master MIAGE – Audit et conception des systèmes d'informations (ACSI)</div>
+              <div class="edu-school">Institut des sciences du digital, management et cognition (IDMC) – Nancy</div>
+              <div class="edu-year">2020 – 2022</div>
+            </div>
+            <div class="education-item">
+              <div class="edu-title">Licence MIAGE – Méthodes informatiques appliquées à la gestion des entreprises</div>
+              <div class="edu-school">Institut des sciences du digital, management et cognition (IDMC) – Nancy</div>
+              <div class="edu-year">2019 – 2020</div>
+            </div>
+          </div>
+          <aside class="card">
+            <h3>Certifications & spécialisations</h3>
+            <ul class="cert-list">
+              <li>Certified associate developer Boomi.</li>
+              <li>Certified MuleSoft developer (level 1).</li>
+              <li>Spécialisation Informatica.</li>
+              <li>Compétences sur Confluent Kafka.</li>
+              <li>Compétences sur Axway : Amplify Fusion, MFT.</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <!-- Projets -->
+      <section id="projets">
+        <div class="section-label">Projets</div>
+        <h2 class="section-title">Exemples de projets issus des expériences</h2>
+        <div class="card">
+          <p class="projects-note">
+            Les projets ci-dessous reprennent les missions principales réalisées chez les clients mentionnés dans le CV.
+          </p>
+          <article class="project-item">
+            <div class="project-title">Plateforme d'intégration pour la gestion de parkings – Effia (Keolis)</div>
+            <div class="project-tagline">Développement d'API et alimentation d'un entrepôt MDM avec Informatica.</div>
+            <p>
+              Mise en place d'API pour les domaines clients, véhicules, poches et Orbility, avec création et
+              optimisation des flux ETL alimentant l'entrepôt MDM, afin d'améliorer la cohérence des données
+              et d'automatiser les échanges entre applications internes.
+            </p>
+          </article>
+          <article class="project-item">
+            <div class="project-title">Plateforme MuleSoft d'échange de données – GSF</div>
+            <div class="project-tagline">Déploiement d'une plateforme unifiée pour les systèmes d'information.</div>
+            <p>
+              Conception et développement de services REST et SOAP, définition des contrats RAML, et déploiement
+              sur CloudHub et On Premise via Azure DevOps, pour fluidifier les échanges de données et renforcer
+              la réactivité opérationnelle.
+            </p>
+          </article>
+          <article class="project-item">
+            <div class="project-title">Chaîne décisionnelle & tableaux de bord BI – GRDF</div>
+            <div class="project-tagline">Mise en place d'un entrepôt de données et de KPI métier.</div>
+            <p>
+              Construction d'une chaîne BI complète incluant la préparation des données, la modélisation en étoile
+              et la création de tableaux de bord interactifs permettant aux décideurs de suivre leurs indicateurs
+              stratégiques.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact">
+        <div class="section-label">Contact</div>
+        <h2 class="section-title">Entrer en contact</h2>
+        <div class="contact-grid">
+          <div class="card">
+            <h3>Coordonnées</h3>
+            <p style="font-size:0.85rem;color:var(--muted);margin-bottom:0.75rem;">
+              Les informations de contact détaillées (email, téléphone, profils en ligne) peuvent être ajoutées ici
+              en fonction des données communiquées sur le CV.
+            </p>
+            <div class="contact-pill">Localisation : à compléter</div>
+            <ul class="contact-list">
+              <li>Adresse e-mail : aboubadoumbia63@gmail.com</li>
+              <li>Numéro de téléphone : (+33) 6 22 02 27 05</li>
+              <li>Profil LinkedIn / GitHub : https://www.linkedin.com/in/aboubacar-doumbia-4b3a21161/</li>
+            </ul>
+          </div>
+          <form class="card contact-form">
+            <h3>Formulaire de contact</h3>
+            <div class="field">
+              <label for="name">Nom</label>
+              <input id="name" type="text" placeholder="Votre nom">
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" type="email" placeholder="votre.email@exemple.com">
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" rows="4" placeholder="Décrivez votre besoin ou votre projet"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:max-content;">Envoyer le message</button>
+          </form>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    © <!-- année dynamique possible en JS --> Aboubacar DOUMBIA – Ingénieur logiciel, développement d'API & middleware.
+  </footer>
+</div>
+
+<!-- JS optionnel pour scroll fluide -->
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', e => {
+      const targetId = link.getAttribute('href').slice(1);
+      const target = document.getElementById(targetId);
+      if (target) {
+        e.preventDefault();
+        window.scrollTo({
+          top: target.offsetTop - 72,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+</script>
+</body>
+</html>
